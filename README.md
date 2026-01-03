@@ -163,6 +163,17 @@ If video cropped successfully application will print "Success!" to console in an
 
 Additionally all input and output files should have same extension for example .mp4
 
+## API
+
+An asynchronous HTTP API is available in the `api/` folder, providing endpoints for video processing jobs. See `api/README_API.md` for details.
+
+## Deploying to Railway
+
+This repository can be deployed on Railway.com as two services:
+- **API Service**: Uses `Dockerfile.api` to run the FastAPI application.
+- **Worker Service**: Uses `Dockerfile.worker` to run the RQ worker for background jobs.
+- **Redis**: Required for job queuing; provided by Railway via the `REDIS_URL` environment variable.
+
 ## Built With
 Docker 18.09.7
 Ubuntu 18.04
